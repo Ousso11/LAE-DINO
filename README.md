@@ -15,7 +15,7 @@
 
 <p align="center">
 <a href="http://arxiv.org/abs/2408.09110"><img src="https://img.shields.io/badge/arXiv-Paper-<color>"></a>
-    <a href="http://arxiv.org/abs/2408.09110"><img src="https://img.shields.io/badge/AAAI'25-Paper-<color>"></a>
+    <a href="http://arxiv.org/abs/2408.09110"><img src="https://img.shields.io/badge/AAAI'25-Paper-blue"></a>
 </p>
 
 <p align="center">
