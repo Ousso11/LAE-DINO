@@ -15,6 +15,7 @@
 
 <p align="center">
 <a href="http://arxiv.org/abs/2408.09110"><img src="https://img.shields.io/badge/arXiv-Paper-<color>"></a>
+    <a href="http://arxiv.org/abs/2408.09110"><img src="https://img.shields.io/badge/AAAI'25-Paper-<color>"></a>
 </p>
 
 <p align="center">
@@ -27,13 +28,14 @@
 
 ## TODO
 
-- [ ] Release [LAE-Label Engine](https://github.com/Earth-Observation-Foundation-Models/LAE-Label-Engine)
+- [ ] Release LAE-Label Engine
 - [ ] Release LAE-1M Dataset
 - [ ] Release LAE-DINO Model
 
 
 
 ## News
+- [2024/12/10] Our paper of "Locate Anything on Earth: Advancing Open-Vocabulary Object Detection for Remote Sensing Community" is accepted AAAI 2025, we will open source as soon as possible!
 - [2024/8/17] Our paper of "Locate Anything on Earth: Advancing Open-Vocabulary Object Detection for Remote Sensing Community" is up on [arXiv](http://arxiv.org/abs/2408.09110).
 
 ## Abstract
