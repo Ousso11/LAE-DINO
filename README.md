@@ -112,7 +112,7 @@ python LAE-Label/plot_bboxs_odvg_dir.py
 Some examples of labelling using LAE-Label, but without rule-based filtering operations.
 
 <p align="center">
-    <img src="assets/LAE-Label-PIC.png" alt="Image" width="500">
+    <img src="assets/LAE-Label-PIC.png" alt="Image" width="700">
 </p>
 
 
