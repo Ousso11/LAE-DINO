@@ -1,3 +1,8 @@
+data/
+weights/
+mmdetection_lae/work_dirs/
+mmdetection_lae/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

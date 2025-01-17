@@ -4,7 +4,7 @@
 
 <h4 align="center"><em>Jiancheng Pan*, &nbsp; &nbsp; Yanxing Liu*, &nbsp; &nbsp; Yuqian Fu✉, &nbsp; &nbsp; Muyuan Ma,</em></h4>
 
-<h4 align="center"><em>Jiaohao Li, &nbsp; &nbsp; Danda Pani Paudel, &nbsp; &nbsp;Luc Van Gool, &nbsp; &nbsp; Xiaomeng Huang✉ </em></h4>
+<h4 align="center"><em>Jiahao Li, &nbsp; &nbsp; Danda Pani Paudel, &nbsp; &nbsp;Luc Van Gool, &nbsp; &nbsp; Xiaomeng Huang✉ </em></h4>
 <p align="center">
     <img src="assets/inst.png" alt="Image" width="400">
 </p>
@@ -21,6 +21,7 @@
 <p align="center">
   <a href="#news">News</a> |
   <a href="#abstract">Abstract</a> |
+  <a href="#engine">Engine</a> |
   <a href="#dataset">Dataset</a> |
   <a href="#model">Model</a> |
   <a href="#statement">Statement</a>
@@ -28,14 +29,15 @@
 
 ## TODO
 
-- [ ] Release LAE-Label Engine
+- [x] Release LAE-Label Engine
 - [ ] Release LAE-1M Dataset
 - [ ] Release LAE-DINO Model
 
 
 
 ## News
-- [2024/12/10] Our paper of "Locate Anything on Earth: Advancing Open-Vocabulary Object Detection for Remote Sensing Community" is accepted AAAI'25, we will open source as soon as possible!
+- [2025/1/17] We have open sourced the code for  <a href="#engine">LAE-Label Engine</a>.
+- [2024/12/10] Our paper of "Locate Anything on Earth: Advancing Open-Vocabulary Object Detection for Remote Sensing Community" is accepted [AAAI'25](https://aaai.org/conference/aaai/aaai-25/), we will open source as soon as possible!
 - [2024/8/17] Our paper of "Locate Anything on Earth: Advancing Open-Vocabulary Object Detection for Remote Sensing Community" is up on [arXiv](http://arxiv.org/abs/2408.09110).
 
 ## Abstract
@@ -44,6 +46,75 @@ Object detection, particularly open-vocabulary object detection, plays a crucial
 <p align="center">
     <img src="assets/lae.png" alt="Image" width="500">
 </p>
+
+## Engine
+
+### LAE-Label Engine Pipeline
+
+The pipeline of our LAE-Label Engine. For LAE-FOD dataset, we use coco slice of open-source tools [SAHI](https://github.com/obss/sahi) to automatically slice COCO annotation and image files ([coco-slice-command-usage](https://github.com/obss/sahi/blob/main/docs/cli.md#coco-slice-command-usage)). For LAE-COD dataset, we build it with the following series of commands (<a href="###how-to-use-lae-label">How to use LAE-Label</a>).
+
+We uniformly convert to COCO format.
+
+<p align="center">
+    <img src="assets/LAE-Label.png" alt="Image" width="500">
+</p>
+
+### How to use LAE-Label
+(Optional) For high resolution remote sensing images, we crop to `1024x1024` size,
+
+```
+python LAE-Label/crop_huge_images.py --input_folder ./LAE_data/DATASET --input_folder --output_folder ./LAE_data/DATASET_sub
+```
+
+SAM is then used to obtain the region of interst (RoI) of the image,
+
+```
+python LAE-Label/det_with_sam.py --checkpoint ./models/sam_vit_h_4b8939.pth --model-type 'vit_h' --input path/to/images/ --output ./LAE_data/DATASET_sub/seg/ --points-per-side 32 --pred-iou-thresh 0.86 --stability-score-thresh 0.92 --crop-n-layers 1 --crop-n-points-downscale-factor 2 --min-mask-region-area 10000
+```
+
+Then crop to get the RoI,
+
+```
+python LAE-Label/crop_rois_from_images.py --img_dir ./LAE_data/DATASET_sub/ --base_dir ./LAE_data/DATASET_sub/seg/ --out_dir ./LAE_data/DATASET_sub/crop/ --N 10 --end jpg
+```
+
+The currently used current open source model with the best multimodal macromodel results, InternVL, provides two versions, the front is the basic version, but the weight is too large, the latter model with `16% of the model size, 90% of the performance`.
+
+```
+huggingface-cli download --resume-download OpenGVLab/InternVL-Chat-V1-5 --local-dir InternVL-Chat-V1-5
+huggingface-cli download --resume-download OpenGVLab/Mini-InternVL-Chat-4B-V1-5 --local-dir Mini-InternVL-Chat-4B-V1-5
+```
+
+Use the LVLM model to generate the corresponding RoI categories according to the prompt template.
+
+```
+# local inference
+python LAE-Label/internvl-infer.py --model_path ./models/InternVL-Chat-V1-5 --root_directory ./LAE_data/DATASET_sub/crop --csv_save_path ./LAE_data/DATASET_sub/csv/
+
+# lmdeploy inference (ref: https://github.com/InternLM/lmdeploy)
+
+python LAE-Label/internvl-infer-openai.py --api_key OPENAIAPIKEY --base_url https://oneapi.XXXX.site:8888/v1  --model_name "internvl-internlm2" --input_dir ./LAE_data/DATASET_sub/crop --output_dir ./LAE_data/DATASET_sub/csv/
+```
+
+(Optional) Then convert to [odvg dataset format](https://github.com/longzw1997/Open-GroundingDino/blob/main/data_format.md) for better post-processing and other operations,
+
+```
+python LAE-Label/dets2odvg.py
+```
+
+(Optional) If you want to see the RoI visualization, by querying the image in odvg format,
+
+```
+python LAE-Label/plot_bboxs_odvg_dir.py
+```
+(Optional) Further optimise the quality of the labelling and develop some rules,  refer [post process method](./LAE-Label/post_process/README.md).
+
+Some examples of labelling using LAE-Label, but without rule-based filtering operations.
+
+<p align="center">
+    <img src="assets/LAE-Label-PIC.png" alt="Image" width="500">
+</p>
+
 
 ## Dataset
 LAE-1M dataset contains abundance categories composed of coarse-grained LAE-COD and fine-grained LAE-FOD. LAE-1M samples from these datasets by category and does not count instances of overlap duplicates when slicing.
