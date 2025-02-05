@@ -164,8 +164,11 @@ LAE-80C is sampled from the validation set of multiple remote sensing object det
     <img src="assets/LAE-80C.png" alt="Image" width="700">
 </p>
 
+**There is a lack of larger categories of detection benchmarks for the remote sensing community.** The LAE-80C can be used alone as a standard for evaluating 80-class object detection in remote sensing scenarios. Here is a quick [download](https://drive.google.com/drive/folders/1HPu97-f1SNF2sWm3Cdb2FHLRybdRbCtS?usp=sharing) via google drive.
+
 ## Model
 The pipeline for solving the LAE task: LAE-Label Engine expands vocabulary for open-vocabulary pre-training; LAE-DINO is a DINO-based open-vocabulary detector with Dynamic Vocabulary Construction (DVC) and Visual-Guided Text Prompt Learning (VisGT), which has a pre-training and fine-tuning paradigm for open-set and closed-set detection.
+
 <p align="center">
     <img src="assets/LAE-DINO-Pipeline.png" alt="Image" width="700">
 </p>
