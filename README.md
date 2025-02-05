@@ -132,6 +132,8 @@ Download data can be downloaded through `Baidu disk` or `drop box`, the download
 
 > drop box: (The data is uploaded)
 
+We have preserved the image catalog names of the original datasets (e.g. DOTA,DIOR et.al.) as much as possible, so it is possible to incrementally download parts (SLM, EMS) of the image data, and separate labeled files.
+
 ### Dataset Catalogue
 The directory structure of the `./data` file is shown below. In order to unify the various structures, we can directly use the coco format data.
 ```
