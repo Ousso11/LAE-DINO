@@ -157,6 +157,12 @@ The directory structure of the `./data` file is shown below. In order to unify t
     ├── RSOD
     └── Xview
 ```
+### LAE-80C Benchmark
+LAE-80C is sampled from the validation set of multiple remote sensing object detection datasets to filter the categories that are as semantically non-overlapping as possible. We combined these categories to create a benchmark with 80 categories.
+
+<p align="center">
+    <img src="assets/LAE-80C.png" alt="Image" width="700">
+</p>
 
 ## Model
 The pipeline for solving the LAE task: LAE-Label Engine expands vocabulary for open-vocabulary pre-training; LAE-DINO is a DINO-based open-vocabulary detector with Dynamic Vocabulary Construction (DVC) and Visual-Guided Text Prompt Learning (VisGT), which has a pre-training and fine-tuning paradigm for open-set and closed-set detection.
