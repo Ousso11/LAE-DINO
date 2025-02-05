@@ -123,6 +123,41 @@ LAE-1M dataset contains abundance categories composed of coarse-grained LAE-COD 
     <img src="assets/LAE-1M.png" alt="Image" width="700">
 </p>
 
+### Dowload LAE-1M Dataset
+Download data can be downloaded through `Baidu disk` or `drop box`, the download address provided below is downloaded to the `./data` of the project.
+
+**LAE-Label Engine is continuously optimized, the quality of data annotation is also improved.**
+
+> Baidu disk: (The data is uploaded)
+
+> drop box: (The data is uploaded)
+
+### Dataset Catalogue
+The directory structure of the `./data` file is shown below. In order to unify the various structures, we can directly use the coco format data.
+```
+.
+├── LAE-80C
+│   ├── images
+│   ├── LAE-80C-benchmark_categories.json
+│   ├── LAE-80C-benchmark.json
+│   └── LAE-80C-benchmark.txt
+├── LAE-COD
+│   ├── AID
+│   ├── EMS
+│   ├── NWPU-RESISC45
+│   └── SLM
+└── LAE-FOD
+    ├── DIOR
+    ├── DOTAv2
+    ├── FAIR1M
+    ├── HRRSD
+    ├── HRSC2016
+    ├── NWPU-VHR-10
+    ├── Power-Plant
+    ├── RSOD
+    └── Xview
+```
+
 ## Model
 The pipeline for solving the LAE task: LAE-Label Engine expands vocabulary for open-vocabulary pre-training; LAE-DINO is a DINO-based open-vocabulary detector with Dynamic Vocabulary Construction (DVC) and Visual-Guided Text Prompt Learning (VisGT), which has a pre-training and fine-tuning paradigm for open-set and closed-set detection.
 <p align="center">
