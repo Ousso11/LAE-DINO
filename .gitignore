@@ -1,5 +1,5 @@
 data/
-weights/
+weights/bert-base-uncased
 mmdetection_lae/work_dirs/
 mmdetection_lae/
 

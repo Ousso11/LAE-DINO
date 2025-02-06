@@ -36,6 +36,7 @@
 
 
 ## News
+- [2025/2/5] We have open sourced the <a href="#dataset">LAE-1M Dataset</a>.
 - [2025/2/5] The LAE-80C dataset, containing 80 classes, has been released as a new remote sensing OVD benchmark and can be quickly [downloaded](https://drive.google.com/drive/folders/1HPu97-f1SNF2sWm3Cdb2FHLRybdRbCtS?usp=sharing) here.
 - [2025/1/17] We have open sourced the code for  <a href="#engine">LAE-Label Engine</a>.
 - [2024/12/10] Our paper of "Locate Anything on Earth: Advancing Open-Vocabulary Object Detection for Remote Sensing Community" is accepted [AAAI'25](https://aaai.org/conference/aaai/aaai-25/), we will open source as soon as possible!
@@ -129,9 +130,9 @@ Download data can be downloaded through `Baidu disk` or `drop box`, the download
 
 **LAE-Label Engine is continuously optimized, the quality of data annotation is also improved.**
 
-> Baidu disk: (The data is uploaded)
+> Baidu disk: (The data is uploading)
 
-> drop box: (The data is uploaded)
+> drop box: (The data is uploading)
 
 We have preserved the image catalog names of the original datasets (e.g. DOTA,DIOR et.al.) as much as possible, so it is possible to incrementally download parts (SLM, EMS) of the image data, and separate labeled files.
 
