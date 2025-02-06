@@ -1,10 +1,9 @@
 <div align="center">
 <h1 align="center"> <img width="30" alt="image" src="./assets/lae-dino.png"> Locate Anything on Earth: Advancing Open-Vocabulary Object Detection for Remote Sensing Community</h1>
 
+<h4 align="center"><em>Jiancheng Pan*,     Yanxing Liu*,     Yuqian Fu✉,     Muyuan Ma,</em></h4>
 
-<h4 align="center"><em>Jiancheng Pan*, &nbsp; &nbsp; Yanxing Liu*, &nbsp; &nbsp; Yuqian Fu✉, &nbsp; &nbsp; Muyuan Ma,</em></h4>
-
-<h4 align="center"><em>Jiahao Li, &nbsp; &nbsp; Danda Pani Paudel, &nbsp; &nbsp;Luc Van Gool, &nbsp; &nbsp; Xiaomeng Huang✉ </em></h4>
+<h4 align="center"><em>Jiahao Li,     Danda Pani Paudel,    Luc Van Gool,     Xiaomeng Huang✉ </em></h4>
 <p align="center">
     <img src="assets/inst.png" alt="Image" width="400">
 </p>
@@ -29,20 +28,20 @@
 
 ## TODO
 
-- [x] Release LAE-Label Engine
-- [x] Release LAE-1M Dataset
+- [X] Release LAE-Label Engine
+- [X] Release LAE-1M Dataset
 - [ ] Release LAE-DINO Model
 
-
-
 ## News
-- [2025/2/5] We have open sourced the <a href="#dataset">LAE-1M Dataset</a>.
+
+- [2025/2/5] We have open sourced the `<a href="#dataset">`LAE-1M Dataset `</a>`.
 - [2025/2/5] The LAE-80C dataset, containing 80 classes, has been released as a new remote sensing OVD benchmark and can be quickly [downloaded](https://drive.google.com/drive/folders/1HPu97-f1SNF2sWm3Cdb2FHLRybdRbCtS?usp=sharing) here.
-- [2025/1/17] We have open sourced the code for  <a href="#engine">LAE-Label Engine</a>.
-- [2024/12/10] Our paper of "Locate Anything on Earth: Advancing Open-Vocabulary Object Detection for Remote Sensing Community" is accepted [AAAI'25](https://aaai.org/conference/aaai/aaai-25/), we will open source as soon as possible!
+- [2025/1/17] We have open sourced the code for  `<a href="#engine">`LAE-Label Engine `</a>`.
+- [2024/12/10] Our paper of "Locate Anything on Earth: Advancing Open-Vocabulary Object Detection for Remote Sensing Community" is accepted [AAAI&#39;25](https://aaai.org/conference/aaai/aaai-25/), we will open source as soon as possible!
 - [2024/8/17] Our paper of "Locate Anything on Earth: Advancing Open-Vocabulary Object Detection for Remote Sensing Community" is up on [arXiv](http://arxiv.org/abs/2408.09110).
 
 ## Abstract
+
 Object detection, particularly open-vocabulary object detection, plays a crucial role in Earth sciences, such as environmental monitoring, natural disaster assessment, and land-use planning. However, existing open-vocabulary detectors, primarily trained on natural-world images, struggle to generalize to remote sensing images due to a significant data domain gap. Thus, this paper aims to advance the development of open-vocabulary object detection in remote sensing community. To achieve this, we first reformulate the task as Locate Anything on Earth (LAE) with the goal of detecting any novel concepts on Earth. We then developed the LAE-Label Engine which collects, auto-annotates, and unifies up to 10 remote sensing datasets creating the LAE-1M - the first large-scale remote sensing object detection dataset with broad category coverage. Using the LAE-1M, we further propose and train the novel LAE-DINO Model, the first open-vocabulary foundation object detector for the LAE task, featuring Dynamic Vocabulary Construction (DVC) and Visual-Guided Text Prompt Learning (VisGT) modules. DVC dynamically constructs vocabulary for each training batch, while VisGT maps visual features to semantic space, enhancing text features. We comprehensively conduct experiments on established remote sensing benchmark DIOR, DOTAv2.0, as well as our newly introduced 80-class LAE-80C benchmark. Results demonstrate the advantages of the LAE-1M dataset and the effectiveness of the LAE-DINO method.
 
 <p align="center">
@@ -53,7 +52,7 @@ Object detection, particularly open-vocabulary object detection, plays a crucial
 
 ### LAE-Label Engine Pipeline
 
-The pipeline of our LAE-Label Engine. For LAE-FOD dataset, we use coco slice of open-source tools [SAHI](https://github.com/obss/sahi) to automatically slice COCO annotation and image files ([coco-slice-command-usage](https://github.com/obss/sahi/blob/main/docs/cli.md#coco-slice-command-usage)). For LAE-COD dataset, we build it with the following series of commands (<a href="###how-to-use-lae-label">How to use LAE-Label</a>).
+The pipeline of our LAE-Label Engine. For LAE-FOD dataset, we use coco slice of open-source tools [SAHI](https://github.com/obss/sahi) to automatically slice COCO annotation and image files ([coco-slice-command-usage](https://github.com/obss/sahi/blob/main/docs/cli.md#coco-slice-command-usage)). For LAE-COD dataset, we build it with the following series of commands (`<a href="###how-to-use-lae-label">`How to use LAE-Label `</a>`).
 
 We uniformly convert to COCO format.
 
@@ -62,6 +61,7 @@ We uniformly convert to COCO format.
 </p>
 
 ### How to use LAE-Label
+
 (Optional) For high resolution remote sensing images, we crop to `1024x1024` size,
 
 ```
@@ -109,6 +109,7 @@ python LAE-Label/dets2odvg.py
 ```
 python LAE-Label/plot_bboxs_odvg_dir.py
 ```
+
 (Optional) Further optimise the quality of the labelling and develop some rules,  refer [post process method](./LAE-Label/post_process/README.md).
 
 Some examples of labelling using LAE-Label, but without rule-based filtering operations.
@@ -117,8 +118,8 @@ Some examples of labelling using LAE-Label, but without rule-based filtering ope
     <img src="assets/LAE-Label-PIC.png" alt="Image" width="700">
 </p>
 
-
 ## Dataset
+
 LAE-1M dataset contains abundance categories composed of coarse-grained LAE-COD and fine-grained LAE-FOD. LAE-1M samples from these datasets by category and does not count instances of overlap duplicates when slicing.
 
 <p align="center">
@@ -126,15 +127,21 @@ LAE-1M dataset contains abundance categories composed of coarse-grained LAE-COD 
 </p>
 
 ### Dowload LAE-1M Dataset
+
 Download data can be downloaded through `Baidu disk` or `drop box`, the download address provided below is downloaded to the `./data` of the project.
 
-**LAE-Label Engine is continuously optimized, the quality of data annotation is also improved.**
+Note: **LAE-Label Engine is continuously optimized, the quality of data annotation is also improved.** We try to explore higher quality data annotations, and dataset versions are iteratively updated. The current version dataset is v1.1, which is the best labelled version available. We also intend to build stable benchmarks based on this version.
 
-> Baidu disk: (The data is uploading)
+> Baidu disk: [download link](https://pan.baidu.com/s/1uwGylPaR1slNzq0Ih4z-xg?pwd=gf59)
 
 > drop box: (The data is uploading)
 
-We have preserved the image catalog names of the original datasets (e.g. DOTA,DIOR et.al.) as much as possible, so it is possible to incrementally download parts (SLM, EMS) of the image data, and separate labeled files. 
+Once you have downloaded the dataset, you can extract the image files in all subdirectories with a shell command.
+```
+tools/unzip_all_images_files.sh
+```
+
+We have preserved the image catalog names of the original datasets (e.g. DOTA,DIOR et.al.) as much as possible, so it is possible to incrementally download parts (SLM, EMS) of the image data, and separate labeled files.
 
 e.g. Extract `images` from origin datasets:
 
@@ -170,8 +177,20 @@ mv overpass/JPEGImages ../images
 mv aircraft/JPEGImages ../images
 ```
 
+### LAE-80C Benchmark
+
+LAE-80C is sampled from the validation set of multiple remote sensing object detection datasets to filter the categories that are as semantically non-overlapping as possible. We combined these categories to create a benchmark with 80 categories.
+
+<p align="center">
+    <img src="assets/LAE-80C.png" alt="Image" width="700">
+</p>
+
+**There is a lack of larger categories of detection benchmarks for the remote sensing community.** The LAE-80C can be used alone as a standard for evaluating 80-class object detection in remote sensing scenarios. Here is a quick [download](https://drive.google.com/drive/folders/1HPu97-f1SNF2sWm3Cdb2FHLRybdRbCtS?usp=sharing) via google drive.
+
 ### Dataset Catalogue
+
 The directory structure of the `./data` file is shown below. In order to unify the various structures, we can directly use the coco format data. `Power-Plant` is the `Condesing-Towering` of paper.
+
 ```
 .
 ├── LAE-80C
@@ -188,23 +207,15 @@ The directory structure of the `./data` file is shown below. In order to unify t
     ├── DIOR
     ├── DOTAv2
     ├── FAIR1M
-    ├── HRRSD
     ├── HRSC2016
     ├── NWPU-VHR-10
     ├── Power-Plant
     ├── RSOD
     └── Xview
 ```
-### LAE-80C Benchmark
-LAE-80C is sampled from the validation set of multiple remote sensing object detection datasets to filter the categories that are as semantically non-overlapping as possible. We combined these categories to create a benchmark with 80 categories.
-
-<p align="center">
-    <img src="assets/LAE-80C.png" alt="Image" width="700">
-</p>
-
-**There is a lack of larger categories of detection benchmarks for the remote sensing community.** The LAE-80C can be used alone as a standard for evaluating 80-class object detection in remote sensing scenarios. Here is a quick [download](https://drive.google.com/drive/folders/1HPu97-f1SNF2sWm3Cdb2FHLRybdRbCtS?usp=sharing) via google drive.
 
 ## Model
+
 The pipeline for solving the LAE task: LAE-Label Engine expands vocabulary for open-vocabulary pre-training; LAE-DINO is a DINO-based open-vocabulary detector with Dynamic Vocabulary Construction (DVC) and Visual-Guided Text Prompt Learning (VisGT), which has a pre-training and fine-tuning paradigm for open-set and closed-set detection.
 
 <p align="center">
@@ -212,7 +223,8 @@ The pipeline for solving the LAE task: LAE-Label Engine expands vocabulary for o
 </p>
 
 ### Installation Environment
-The experimental environment is based on [`mmdetection`](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md), the installation environment reference mmdetection's [installation guide](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md). Or refer to the following tutorial,
+
+The experimental environment is based on [mmdetection](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md), the installation environment reference mmdetection's [installation guide](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md). Or refer to the following tutorial,
 
 ```
 conda create --name lae python=3.8 -y
@@ -229,12 +241,15 @@ pip install -r requirements/multimodal.txt
 pip install emoji ddd-dataset
 pip install git+https://github.com/lvis-dataset/lvis-api.git
 ```
+
 ### Train LAE-DINO Model
 
 ```
 ./tools/dist_train.sh configs/lae_dino/lae_dino_swin-t_pretrain_LAE-1M.py 4
 ```
+
 Continuing training from the last training breakpoint,
+
 ```
 ./tools/dist_train_lae.sh configs/lae_dino/lae_dino_swin-t_pretrain_LAE-1M.py 4
 ```
@@ -245,10 +260,10 @@ Continuing training from the last training breakpoint,
 ./tools/dist_test.sh configs/lae_dino/lae_dino_swin-t_pretrain_LAE-1M.py /path/to/model/ 4
 ```
 
-
 ## Statement
 
 ### Acknowledgement
+
 This project references and uses the following open source models and datasets. Thanks also to `ETH Zürich` and `INSAIT` for partial computing support.
 
 #### Related Open Source Models
@@ -268,6 +283,7 @@ This project references and uses the following open source models and datasets. 
 - [NWPU Dataset](https://gjy3035.github.io/NWPU-Crowd-Sample-Code/)
 
 ### Citation
+
 If you are interested in the following work, please cite the following paper.
 
 ```
