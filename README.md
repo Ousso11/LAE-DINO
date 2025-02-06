@@ -217,7 +217,7 @@ The experimental environment is based on [`mmdetection`](https://github.com/open
 ```
 conda create --name lae python=3.8 -y
 conda activate lae
-cd LAE/mmdetection_lae
+cd LAE-DINO/mmdetection_lae
 pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 pip install -U openmim
 mim install mmengine
