@@ -134,10 +134,44 @@ Download data can be downloaded through `Baidu disk` or `drop box`, the download
 
 > drop box: (The data is uploading)
 
-We have preserved the image catalog names of the original datasets (e.g. DOTA,DIOR et.al.) as much as possible, so it is possible to incrementally download parts (SLM, EMS) of the image data, and separate labeled files.
+We have preserved the image catalog names of the original datasets (e.g. DOTA,DIOR et.al.) as much as possible, so it is possible to incrementally download parts (SLM, EMS) of the image data, and separate labeled files. 
+
+e.g. Extract `images` from origin datasets:
+
+```
+# DOTAv2 dataset
+cd DOTAv2/
+unzip images.zip
+
+# DIOR dataset
+cd DIOR/
+unzip images.zip
+
+# FAIR1M dataset
+cd FAIR1M/
+unzip images.zip
+
+# NWPU-VHR-10 dataset
+cd NWPU-VHR-10/
+unzip images.zip
+
+
+# HRSC2016 dataset
+cd HRSC2016/
+unrar x HRSC2016.part01.rar
+mv Train/AllImages ../Train/AllImages
+
+# RSOD dataset:
+cd RSOD/
+mkdir ../images
+mv aircraft/JPEGImages ../images
+mv oiltank/JPEGImages ../images
+mv overpass/JPEGImages ../images
+mv aircraft/JPEGImages ../images
+```
 
 ### Dataset Catalogue
-The directory structure of the `./data` file is shown below. In order to unify the various structures, we can directly use the coco format data.
+The directory structure of the `./data` file is shown below. In order to unify the various structures, we can directly use the coco format data. `Power-Plant` is the `Condesing-Towering` of paper.
 ```
 .
 ├── LAE-80C
@@ -177,10 +211,29 @@ The pipeline for solving the LAE task: LAE-Label Engine expands vocabulary for o
     <img src="assets/LAE-DINO-Pipeline.png" alt="Image" width="700">
 </p>
 
+### Installation Environment
+The experimental environment is based on [`mmdetection`](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md), the installation environment reference mmdetection's [installation guide](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md). Or refer to the following tutorial,
+
+```
+conda create --name lae python=3.8 -y
+conda activate lae
+cd LAE/mmdetection_lae
+pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+pip install -U openmim
+mim install mmengine
+mim install "mmcv>=2.0.0"
+
+# 开发并直接运行 mmdet
+pip install -v -e .
+pip install -r requirements/multimodal.txt
+pip install emoji ddd-dataset
+pip install git+https://github.com/lvis-dataset/lvis-api.git
+```
+
 ## Statement
 
 ### Acknowledgement
-This project references and uses the following open source models and datasets.
+This project references and uses the following open source models and datasets. Thanks also to `ETH Zürich` and `INSAIT` for partial computing support.
 
 #### Related Open Source Models
 
