@@ -229,6 +229,22 @@ pip install -r requirements/multimodal.txt
 pip install emoji ddd-dataset
 pip install git+https://github.com/lvis-dataset/lvis-api.git
 ```
+### Train LAE-DINO Model
+
+```
+./tools/dist_train.sh configs/lae_dino/lae_dino_swin-t_pretrain_LAE-1M.py 4
+```
+Continuing training from the last training breakpoint,
+```
+./tools/dist_train_lae.sh configs/lae_dino/lae_dino_swin-t_pretrain_LAE-1M.py 4
+```
+
+### Test LAE-DINO Model
+
+```
+./tools/dist_test.sh configs/lae_dino/lae_dino_swin-t_pretrain_LAE-1M.py /path/to/model/ 4
+```
+
 
 ## Statement
 
