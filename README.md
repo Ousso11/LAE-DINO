@@ -34,9 +34,9 @@
 
 ## News
 
-- [2025/2/5] We have open sourced the `<a href="#dataset">`LAE-1M Dataset `</a>`.
+- [2025/2/5] We have open sourced the <a href="#dataset">LAE-1M Dataset </a>.
 - [2025/2/5] The LAE-80C dataset, containing 80 classes, has been released as a new remote sensing OVD benchmark and can be quickly [downloaded](https://drive.google.com/drive/folders/1HPu97-f1SNF2sWm3Cdb2FHLRybdRbCtS?usp=sharing) here.
-- [2025/1/17] We have open sourced the code for  `<a href="#engine">`LAE-Label Engine `</a>`.
+- [2025/1/17] We have open sourced the code for <a href="#engine">LAE-Label Engine </a>.
 - [2024/12/10] Our paper of "Locate Anything on Earth: Advancing Open-Vocabulary Object Detection for Remote Sensing Community" is accepted [AAAI&#39;25](https://aaai.org/conference/aaai/aaai-25/), we will open source as soon as possible!
 - [2024/8/17] Our paper of "Locate Anything on Earth: Advancing Open-Vocabulary Object Detection for Remote Sensing Community" is up on [arXiv](http://arxiv.org/abs/2408.09110).
 
@@ -52,7 +52,7 @@ Object detection, particularly open-vocabulary object detection, plays a crucial
 
 ### LAE-Label Engine Pipeline
 
-The pipeline of our LAE-Label Engine. For LAE-FOD dataset, we use coco slice of open-source tools [SAHI](https://github.com/obss/sahi) to automatically slice COCO annotation and image files ([coco-slice-command-usage](https://github.com/obss/sahi/blob/main/docs/cli.md#coco-slice-command-usage)). For LAE-COD dataset, we build it with the following series of commands (`<a href="###how-to-use-lae-label">`How to use LAE-Label `</a>`).
+The pipeline of our LAE-Label Engine. For LAE-FOD dataset, we use coco slice of open-source tools [SAHI](https://github.com/obss/sahi) to automatically slice COCO annotation and image files ([coco-slice-command-usage](https://github.com/obss/sahi/blob/main/docs/cli.md#coco-slice-command-usage)). For LAE-COD dataset, we build it with the following series of commands (<a href="###how-to-use-lae-label">How to use LAE-Label </a>).
 
 We uniformly convert to COCO format.
 
