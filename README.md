@@ -128,7 +128,7 @@ LAE-1M dataset contains abundance categories composed of coarse-grained LAE-COD 
 
 ### Dowload LAE-1M Dataset
 
-Download data can be downloaded through `Baidu disk` or `Onedrive`, the download address provided below is downloaded to the `./data` of the project.
+Download data can be downloaded through `Baidu disk` or `Onedrive`, the download address provided below is downloaded to the `./LAE-DINO` of the project.
 
 Note: **LAE-Label Engine is continuously optimized, the quality of data annotation is also improved.** We try to explore higher quality data annotations, and dataset versions are iteratively updated. The current version dataset is v1.1, which is the best labelled version available. We also intend to build stable benchmarks based on this version.
 
@@ -192,7 +192,7 @@ LAE-80C is sampled from the validation set of multiple remote sensing object det
 The directory structure of the `./data` file is shown below. In order to unify the various structures, we can directly use the coco format data. `Power-Plant` is the `Condesing-Towering` of paper.
 
 ```
-.
+./data
 ├── LAE-80C
 │   ├── images
 │   ├── LAE-80C-benchmark_categories.json
