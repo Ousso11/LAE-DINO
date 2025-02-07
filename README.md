@@ -128,13 +128,13 @@ LAE-1M dataset contains abundance categories composed of coarse-grained LAE-COD 
 
 ### Dowload LAE-1M Dataset
 
-Download data can be downloaded through `Baidu disk` or `drop box`, the download address provided below is downloaded to the `./data` of the project.
+Download data can be downloaded through `Baidu disk` or `Onedrive`, the download address provided below is downloaded to the `./data` of the project.
 
 Note: **LAE-Label Engine is continuously optimized, the quality of data annotation is also improved.** We try to explore higher quality data annotations, and dataset versions are iteratively updated. The current version dataset is v1.1, which is the best labelled version available. We also intend to build stable benchmarks based on this version.
 
 > Baidu disk: [download link](https://pan.baidu.com/s/1uwGylPaR1slNzq0Ih4z-xg?pwd=gf59)
 
-> drop box: (The data is uploading)
+> Onedrive: [download link](https://1drv.ms/f/c/72d4076f2aa319be/EhpYDEA71mFOorBWIoxglwMBNuy3i3bbf2W1qi8IHBjOAA?e=mGThPR)
 
 Once you have downloaded the dataset, you can extract the image files in all subdirectories with a shell command.
 ```
