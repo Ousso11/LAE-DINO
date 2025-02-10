@@ -2,6 +2,7 @@ data/
 weights/bert-base-uncased
 mmdetection_lae/work_dirs/
 mmdetection_lae/
+*.pth
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

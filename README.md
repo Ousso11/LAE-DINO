@@ -138,7 +138,7 @@ Note: **LAE-Label Engine is continuously optimized, the quality of data annotati
 
 Once you have downloaded the dataset, you can extract the image files in all subdirectories with a shell command.
 ```
-tools/unzip_all_images_files.sh
+bash tools/unzip_all_images_files.sh
 ```
 
 We have preserved the image catalog names of the original datasets (e.g. DOTA,DIOR et.al.) as much as possible, so it is possible to incrementally download parts (SLM, EMS) of the image data, and separate labeled files.
