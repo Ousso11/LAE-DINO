@@ -62,7 +62,8 @@ We uniformly convert to COCO format.
 
 ### How to use LAE-Label
 LAE-Label is mainly based on the [SAM](https://github.com/facebookresearch/segment-anything) and [InternVL](https://github.com/OpenGVLab/InternVL/tree/main) projects, mainly referring to the InternVL environment installation.
-**Note:**transformers==4.42.3 or 4.45.2(InternVL maybe not install higher transformers version)
+
+**Note:**transformers==4.42.3 or 4.45.2(InternVL maybe not install higher transformers version), maybe you can ref the `./internvl_requirements.txt` for installing internvl enviroment.
 
 (Optional) For high resolution remote sensing images, we crop to `1024x1024` size,
 
