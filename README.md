@@ -13,8 +13,10 @@
 </div>
 
 <p align="center">
-<a href="http://arxiv.org/abs/2408.09110"><img src="https://img.shields.io/badge/arXiv-Paper-<color>"></a>
+    <a href="http://arxiv.org/abs/2408.09110"><img src="https://img.shields.io/badge/Arxiv-2410.06234-b31b1b.svg?logo=arXiv"></a>
     <a href="http://arxiv.org/abs/2408.09110"><img src="https://img.shields.io/badge/AAAI'25-Paper-blue"></a>
+    <a href="https://jianchengpan.space/LAE-website/index.html"><img src="https://img.shields.io/badge/LAE-Project_Page-<color>"></a>
+    <a href="https://github.com/jaychempan/LAE-DINO/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow"></a>
 </p>
 
 <p align="center">
