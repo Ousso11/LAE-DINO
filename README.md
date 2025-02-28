@@ -28,11 +28,11 @@
   <a href="#statement">Statement</a>
 </p>
 
-## TODO
+<!-- ## TODO
 
 - [X] Release LAE-Label Engine
 - [X] Release LAE-1M Dataset
-- [ ] Release LAE-DINO Model
+- [ ] Release LAE-DINO Model -->
 
 ## News
 
@@ -54,9 +54,7 @@ Object detection, particularly open-vocabulary object detection, plays a crucial
 
 ### LAE-Label Engine Pipeline
 
-The pipeline of our LAE-Label Engine. For LAE-FOD dataset, we use coco slice of open-source tools [SAHI](https://github.com/obss/sahi) to automatically slice COCO annotation and image files ([coco-slice-command-usage](https://github.com/obss/sahi/blob/main/docs/cli.md#coco-slice-command-usage)). For LAE-COD dataset, we build it with the following series of commands (<a href="###how-to-use-lae-label">How to use LAE-Label </a>).
-
-We uniformly convert to COCO format.
+The pipeline of our LAE-Label Engine. For LAE-FOD dataset, we use coco slice of open-source tools [SAHI](https://github.com/obss/sahi) to automatically slice COCO annotation and image files ([coco-slice-command-usage](https://github.com/obss/sahi/blob/main/docs/cli.md#coco-slice-command-usage)). For LAE-COD dataset, we build it with the following series of commands (<a href="###how-to-use-lae-label">How to use LAE-Label </a>). We uniformly convert to COCO format. You can refer to my environment [lae_requirements.txt](http://vgithub.com/jaychempan/LAE-DINO/blob/main/internvl_requirements.txt) if you encounter problems.
 
 <p align="center">
     <img src="assets/LAE-Label.png" alt="Image" width="500">
@@ -94,16 +92,16 @@ huggingface-cli download --resume-download OpenGVLab/Mini-InternVL-Chat-4B-V1-5 
 
 We also tested InternVL models of different sizes, including InternVL2-8B (16 GB), InternVL-Chat-V1-5 (48 GB), and InternVL2-26B (48 GB).
 <p align="center">
-    <img src="assets/LAE-Engine-Test.png" alt="Image" width="500">
+    <img src="assets/LAE-Engine-Test.png" alt="Image" width="800">
 </p>
 
-Use the LVLM model to generate the corresponding RoI categories according to the prompt template.
+Use the LVLM model to generate the corresponding RoI categories according to the prompt template. It can be deployed locally and remotely, with specific code below. Where remote deployment can be found in [lmdeploy](https://github.com/InternLM/lmdeploy).
 
 ```
 # local inference
 python LAE-Label/internvl-infer.py --model_path ./models/InternVL-Chat-V1-5 --root_directory ./LAE_data/DATASET_sub/crop --csv_save_path ./LAE_data/DATASET_sub/csv/
 
-# lmdeploy inference (ref: https://github.com/InternLM/lmdeploy)
+# remote inference
 
 python LAE-Label/internvl-infer-openai.py --api_key OPENAIAPIKEY --base_url https://oneapi.XXXX.site:8888/v1  --model_name "internvl-internlm2" --input_dir ./LAE_data/DATASET_sub/crop --output_dir ./LAE_data/DATASET_sub/csv/
 ```
@@ -114,7 +112,7 @@ python LAE-Label/internvl-infer-openai.py --api_key OPENAIAPIKEY --base_url http
 python LAE-Label/dets2odvg.py
 ```
 
-(Optional) If you want to see the RoI visualization, by querying the image in odvg format,
+(Optional) If you want to see the RoI visualization, by querying the image in odvg format. Converted to ODVG for easy visualization and processing.
 
 ```
 python LAE-Label/plot_bboxs_odvg_dir.py
@@ -235,8 +233,7 @@ The pipeline for solving the LAE task: LAE-Label Engine expands vocabulary for o
 
 ### Installation Environment
 
-The experimental environment is based on [mmdetection](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md), the installation environment reference mmdetection's [installation guide](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md). Or refer to the following tutorial,
-
+The experimental environment is based on [mmdetection](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md), the installation environment reference mmdetection's [installation guide](https://github.com/open-mmlab/mmdetection/blob/main/docs/zh_cn/get_started.md). You can refer to my environment [lae_requirements.txt](http://vgithub.com/jaychempan/LAE-DINO/blob/main/lae_requirements.txt) if you encounter problems.
 ```
 conda create --name lae python=3.8 -y
 conda activate lae
@@ -292,6 +289,10 @@ This project references and uses the following open source models and datasets. 
 - [AID Dataset](https://captain-whu.github.io/AID/)
 - [RSICD Dataset](https://github.com/201528014227051/RSICD_optimal)
 - [NWPU Dataset](https://gjy3035.github.io/NWPU-Crowd-Sample-Code/)
+- [RSOD Dataset](https://github.com/RSIA-LIESMARS-WHU/RSOD-Dataset-)
+- [HRSC2016 Dataset](http://www.escience.cn/people/liuzikun/DataSet.html)
+- [Power-Plant Dataset](https://github.com/SPDQ/Power-Plant-Detection-in-RSI)
+- [SLM Dataset](https://github.com/xiaoyuan1996/SemanticLocalizationMetrics)
 
 ### Citation
 
