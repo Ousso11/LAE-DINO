@@ -281,7 +281,7 @@ Based on the stable version of the LAE-1M dataset, we used 4-card A100 and ran 3
 ## Discussion
 - Our work is suitable for zero-shot and few-shot benchmark models in remote sensing, which can be used for pre-detection of some common and uncommon categories.
 
-- Regarding “Locate”, in most of the articles, these two are the same, because most of the tasks are only concerned with the relative position of the ROI, but in the actual remote sensing detection, the latitude and longitude can be calculated by calculating the world position  and the position of the image.
+- Regarding “Locate” and “Detect”, in most of the articles, these two are the same, because most of the tasks are only concerned with the relative position of the ROI, but in the actual remote sensing detection, the latitude and longitude can be calculated by calculating the world position  and the position of the image.
 
 ## Statement
 
