@@ -35,7 +35,7 @@
 - [ ] Release LAE-DINO Model -->
 
 ## News
-- [2025/2/28] We have open sourced the <a href="#model">LAE-DINO Dataset </a>.
+- [2025/2/28] We have open sourced the <a href="#model">LAE-DINO Model </a>.
 - [2025/2/5] We have open sourced the <a href="#dataset">LAE-1M Dataset </a>.
 - [2025/2/5] The LAE-80C dataset, containing 80 classes, has been released as a new remote sensing OVD benchmark and can be quickly [downloaded](https://drive.google.com/drive/folders/1HPu97-f1SNF2sWm3Cdb2FHLRybdRbCtS?usp=sharing) here.
 - [2025/1/17] We have open sourced the code for <a href="#engine">LAE-Label Engine </a>.
