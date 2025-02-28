@@ -279,7 +279,9 @@ Based on the stable version of the LAE-1M dataset, we used 4-card A100 and ran 3
 | LAE-DINO-T | 87.3 | 51.5        | 24.1 [[weight]](https://github.com/jaychempan/LAE-DINO/blob/main/weights/lae_dino_swint_lae1m-28ca3a15.pth) |
 
 ## Discussion
-Our work is suitable for zero-shot and few-shot benchmark models in remote sensing, which can be used for pre-detection of some common and uncommon categories.
+- Our work is suitable for zero-shot and few-shot benchmark models in remote sensing, which can be used for pre-detection of some common and uncommon categories.
+
+- Regarding “Locate”, in most of the articles, these two are the same, because most of the tasks are only concerned with the relative position of the ROI, but in the actual remote sensing detection, the latitude and longitude can be calculated by calculating the world position  and the position of the image.
 
 ## Statement
 
