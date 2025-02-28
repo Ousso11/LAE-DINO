@@ -272,12 +272,14 @@ Continuing training from the last training breakpoint,
 ```
 ./tools/dist_test.sh configs/lae_dino/lae_dino_swin-t_pretrain_LAE-1M.py /path/to/model/ 4
 ```
-Based on the stable version of the LAE-1M dataset, we used 4-card A100 and ran 32 epochs with batchsiza of 4 per card. LAE-80C considers more categories and can be used as a benchmark for zero-shot and few-shot in remote sensing.
+Based on the stable version of the LAE-1M dataset, we used 4-card A100 and ran 32 epochs with 4 per card batch size. LAE-80C considers more categories and can be used as a benchmark for zero-shot and few-shot in remote sensing.
 
 | Method      | DIOR AP50 | DOTAv2.0 mAP | LAE-80C mAP |
 |------------|------|-------------|-------------|
 | LAE-DINO-T | 87.3 | 51.5        | 24.1 [[weight]](https://github.com/jaychempan/LAE-DINO/blob/main/weights/lae_dino_swint_lae1m-28ca3a15.pth) |
 
+## Discussion
+Our work is suitable for zero-shot and few-shot benchmark models in remote sensing, which can be used for pre-detection of some common and uncommon categories.
 
 ## Statement
 
