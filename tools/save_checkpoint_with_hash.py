@@ -61,6 +61,6 @@ def check_pth_hash(pth_file: str, expected_hash: str) -> bool:
 
 if __name__ == "__main__":
     # 示例使用
-    input_pth = "/home/panjiancheng/projects/LAE-DINO/weights/lae_dino_swint_lae_1m_ep26.pth"
-    output_pth = "/home/panjiancheng/projects/LAE-DINO/weights/lae_dino_swint_lae1m.pth"
+    input_pth = "./weights/lae_dino_swint_lae_1m.pth"
+    output_pth = "./weights/lae_dino_swint_lae1m.pth"
     resave_pth(input_pth, output_pth)
