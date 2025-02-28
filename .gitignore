@@ -1,7 +1,6 @@
 data/
 weights/bert-base-uncased
 mmdetection_lae/work_dirs/
-mmdetection_lae/
 test/
 *.pth
 

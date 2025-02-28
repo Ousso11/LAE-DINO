@@ -249,6 +249,11 @@ pip install -r requirements/multimodal.txt
 pip install emoji ddd-dataset
 pip install git+https://github.com/lvis-dataset/lvis-api.git
 ```
+Then download the BERT weights `bert-base-uncased` into the weights directory,
+```
+cd LAE-DINO
+huggingface-cli download --resume-download google-bert/bert-base-uncased --local-dir weights/bert-base-uncased
+```
 
 ### Train LAE-DINO Model
 
