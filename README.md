@@ -35,7 +35,7 @@
 - [ ] Release LAE-DINO Model -->
 
 ## News
-
+- [2025/2/28] We have open sourced the <a href="#model">LAE-DINO Dataset </a>.
 - [2025/2/5] We have open sourced the <a href="#dataset">LAE-1M Dataset </a>.
 - [2025/2/5] The LAE-80C dataset, containing 80 classes, has been released as a new remote sensing OVD benchmark and can be quickly [downloaded](https://drive.google.com/drive/folders/1HPu97-f1SNF2sWm3Cdb2FHLRybdRbCtS?usp=sharing) here.
 - [2025/1/17] We have open sourced the code for <a href="#engine">LAE-Label Engine </a>.
@@ -272,6 +272,12 @@ Continuing training from the last training breakpoint,
 ```
 ./tools/dist_test.sh configs/lae_dino/lae_dino_swin-t_pretrain_LAE-1M.py /path/to/model/ 4
 ```
+Based on the stable version of the LAE-1M dataset, we used 4-card A100 and ran 32 epochs with batchsiza of 4 per card. LAE-80C considers more categories and can be used as a benchmark for zero-shot and few-shot in remote sensing.
+
+| Method      | DIOR AP50 | DOTAv2.0 mAP | LAE-80C mAP |
+|------------|------|-------------|-------------|
+| LAE-DINO-T | 87.3 | 51.5        | 24.1 [[weight]](https://github.com/jaychempan/LAE-DINO/blob/main/weights/lae_dino_swint_lae1m-28ca3a15.pth) |
+
 
 ## Statement
 
