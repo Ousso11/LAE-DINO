@@ -1,10 +1,12 @@
 _base_ = [
-    '../_base_/datasets/lae_1m_detection.py',
+    #'../_base_/datasets/lae_1m_detection.py',
+    '../_base_/datasets/lae_small.py',
     '../_base_/schedules/schedule_1x.py', 
     '../_base_/default_runtime.py'
 ]
 pretrained = 'https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth'
-load_from = 'https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth'  # noqa
+load_from = '../weights/groundingdino_swint_ogc_mmdet-822d7e9d.pth' #'https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth'  # noqa
+#load_from = 'https://download.openmmlab.com/mmdetection/v3.0/grounding_dino/groundingdino_swint_ogc_mmdet-822d7e9d.pth'  # noqa
 lang_model_name = '../weights/bert-base-uncased'
 
 model = dict(
